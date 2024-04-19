@@ -19,7 +19,9 @@ TODO
   - Possibilité retenue (https://aashishpeepra-ap.medium.com/what-if-you-just-wrap-your-entire-db-layer-in-one-giant-try-catch-649138bd2109)
   - mettre en place la possibilité retenue
 
-- Ajouter la gestion des bad request quand le format du body n'est pas valide
+- Installer les normes Airbnb https://github.com/iamturns/eslint-config-airbnb-typescript
+
+- Ajouter la gestion des bad request quand le format ne correspond pas à la documentation
 
 - Mettre l'application NestJS dans un container Docker
 - Ajouter la fonctionnalité de refresh token
