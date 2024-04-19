@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "e0370b64-aa69-4673-b731-fb2aaa7ee89c",
+		"name": "Les Echos - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10837210"
+	},
+	"item": [
+		{
+			"name": "POST user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsdjZ0cmY4bDAwMDFqNm5iaGw2Yml6Zm4iLCJuaWNrbmFtZSI6InRlc3RuaWNrbmFtZSIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJuYW1lIjoidGVzdCIsImFkZHJlc3MiOiIyIGFsbMOpZSBkdSBsb3VwIDc1MDA1IFBhcmlzIiwiY29tbWVudCI6ImNvbW1lbnRhaXJlIGVuIGNvdXJzIGRlIGNvbnN0cnVjdGlvbiIsImlhdCI6MTcxMzU0MTA3NCwiZXhwIjoxNzE2MTMzMDc0fQ.yegTLs4LQMAzFm0coBieG3x_Olp-UWpm6ksB2XRWqvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickname\": \"testnickname\",\r\n    \"roles\": [\"USER\", \"ADMIN\"],\r\n    \"name\": \"test\",\r\n    \"address\": \"2 allée du loup 75005 Paris\",\r\n    \"comment\": \"commentaire en cours de construction\",\r\n    \"password\": \"passok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsdjZ0cmY4bDAwMDFqNm5iaGw2Yml6Zm4iLCJuaWNrbmFtZSI6InRlc3RuaWNrbmFtZSIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJuYW1lIjoidGVzdCIsImFkZHJlc3MiOiIyIGFsbMOpZSBkdSBsb3VwIDc1MDA1IFBhcmlzIiwiY29tbWVudCI6ImNvbW1lbnRhaXJlIGVuIGNvdXJzIGRlIGNvbnN0cnVjdGlvbiIsImlhdCI6MTcxMzU0MTA3NCwiZXhwIjoxNzE2MTMzMDc0fQ.yegTLs4LQMAzFm0coBieG3x_Olp-UWpm6ksB2XRWqvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/users/clv6trf8l0001j6nbhl6bizfn",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"clv6trf8l0001j6nbhl6bizfn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST auth/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWNrbmFtZSI6Im5pY2tuYW1lX3VzZXJfdGVzdDMiLCJzdWIiOiJjbHYyZWt0dXYwMDAwZ2I2YmF0Yzd2azFzIiwiaWF0IjoxNzEzMzAyOTExLCJleHAiOjE3MTMzMDI5MTF9.pyJMOvRzj2OR5cNgiLVguDaJycOI8BmVmks1QKj87Ds",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testnickname\",\r\n    \"password\": \"passok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsdjZ0cmY4bDAwMDFqNm5iaGw2Yml6Zm4iLCJuaWNrbmFtZSI6InRlc3RuaWNrbmFtZSIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJuYW1lIjoidGVzdCIsImFkZHJlc3MiOiIyIGFsbMOpZSBkdSBsb3VwIDc1MDA1IFBhcmlzIiwiY29tbWVudCI6ImNvbW1lbnRhaXJlIGVuIGNvdXJzIGRlIGNvbnN0cnVjdGlvbiIsImlhdCI6MTcxMzU0MTA3NCwiZXhwIjoxNzE2MTMzMDc0fQ.yegTLs4LQMAzFm0coBieG3x_Olp-UWpm6ksB2XRWqvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"where\": {\r\n        \"nickname\": \"testnickname\",\r\n        \"roles\": [\"ADMIN\"],\r\n        \"name\":\"test\" ,\r\n        \"address\": \"2 allée du loup 75005 Paris\",\r\n        \"comment\": \"commentaire en cours de construction\"\r\n    },\r\n    \"orderBy\": {\r\n        \"nickname\": \"desc\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsdjZ0cmY4bDAwMDFqNm5iaGw2Yml6Zm4iLCJuaWNrbmFtZSI6InRlc3RuaWNrbmFtZSIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJuYW1lIjoidGVzdCIsImFkZHJlc3MiOiIyIGFsbMOpZSBkdSBsb3VwIDc1MDA1IFBhcmlzIiwiY29tbWVudCI6ImNvbW1lbnRhaXJlIGVuIGNvdXJzIGRlIGNvbnN0cnVjdGlvbiIsImlhdCI6MTcxMzU0MTA3NCwiZXhwIjoxNzE2MTMzMDc0fQ.yegTLs4LQMAzFm0coBieG3x_Olp-UWpm6ksB2XRWqvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/users/clv6trf8l0001j6nbhl6bizfn",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"clv6trf8l0001j6nbhl6bizfn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsdjZ0cmY4bDAwMDFqNm5iaGw2Yml6Zm4iLCJuaWNrbmFtZSI6InRlc3RuaWNrbmFtZSIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJuYW1lIjoidGVzdCIsImFkZHJlc3MiOiIyIGFsbMOpZSBkdSBsb3VwIDc1MDA1IFBhcmlzIiwiY29tbWVudCI6ImNvbW1lbnRhaXJlIGVuIGNvdXJzIGRlIGNvbnN0cnVjdGlvbiIsImlhdCI6MTcxMzU0MTA3NCwiZXhwIjoxNzE2MTMzMDc0fQ.yegTLs4LQMAzFm0coBieG3x_Olp-UWpm6ksB2XRWqvA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"nickname\": \"testnickname2\",\r\n        \"roles\": [\r\n            \"USER\",\r\n            \"ADMIN\"\r\n        ],\r\n        \"name\": \"test2\",\r\n        \"address\": \"2 allée du loup 75005 Paris2\",\r\n        \"comment\": \"commentaire en cours de construction2\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/users/clv6u9yqg0000bx7x2jv8e7lb",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"clv6u9yqg0000bx7x2jv8e7lb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -42,7 +42,17 @@ export class UsersController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Admin, Role.User)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUser: Partial<User>) {
+  update(
+    @Param('id') id: string,
+    @Body()
+    updateUser: {
+      nickname: string;
+      roles: Role[];
+      name: string;
+      address: string;
+      comment: string;
+    },
+  ) {
     return this.usersService.update(id, updateUser);
   }
 

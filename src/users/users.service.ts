@@ -10,15 +10,7 @@ export class UsersService {
 
   async signUp(createUser: CreateUser<User>): Promise<User> {
     const { password, ...user } = createUser;
-    const userExist = await this.prismaService.user.count({
-      where: {
-        nickname: user.nickname,
-      },
-    });
-
-    if (userExist) {
-      throw new ConflictException('Nickname already in use! Try another one.');
-    }
+    await this.nicknameExist(user.nickname);
 
     const password_hash = await hash(password, 10);
 
@@ -72,6 +64,8 @@ export class UsersService {
     updateUserId: string,
     updateUser: Partial<User>,
   ): Promise<User | null> {
+    await this.nicknameExist(updateUser.nickname);
+
     const user = await this.prismaService.user.update({
       where: {
         id: updateUserId,
@@ -90,5 +84,21 @@ export class UsersService {
     });
 
     return user;
+  }
+
+  async nicknameExist(nickname: string | undefined): Promise<void> {
+    if (nickname) {
+      const nicknameExist = await this.prismaService.user.count({
+        where: {
+          nickname: nickname,
+        },
+      });
+
+      if (nicknameExist) {
+        throw new ConflictException(
+          'Nickname already in use! Try another one.',
+        );
+      }
+    }
   }
 }
