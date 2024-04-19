@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id       String    @id @default(cuid())
+  nickname String    @unique
+  password Password?
+  roles    Role[]    @default([USER])
+  name     String?
+  address  String?   @db.Text
+  comment  String?
+}
+
+model Password {
+  hash   String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @unique
+}
