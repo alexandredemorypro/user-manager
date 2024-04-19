@@ -5,7 +5,7 @@
 
 ## Installation
 ```bash
-$ git clone
+$ git clone https://github.com/alexandredemorypro/user-manager.git
 $ cp .env.exemple .env
 $ yarn install
 $ yarn prisma generate
